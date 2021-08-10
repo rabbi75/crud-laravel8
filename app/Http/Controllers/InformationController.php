@@ -133,4 +133,22 @@ class InformationController extends Controller
         session()->flash('success', 'Student has deleted successfully !!');
         return back();
     }
+    /**
+     * Search the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $search = $request->search;
+
+        $information = Information::orWhere('name', 'like', '%'.$search.'%')
+            ->orWhere('description', 'like', '%'.$search.'%')
+            ->orWhere('email', 'like', '%'.$search.'%')
+            ->paginate(4);
+
+        return view('search', compact('search', 'information'));
+    }
 }
