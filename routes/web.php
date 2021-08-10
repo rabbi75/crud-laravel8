@@ -19,3 +19,5 @@ Route::post('/store', 'App\Http\Controllers\InformationController@store')->name(
 Route::get('/edit/{id}', 'App\Http\Controllers\InformationController@edit')->name('information.edit');
 Route::post('/update/{id}', 'App\Http\Controllers\InformationController@update')->name('information.update');
 Route::get('/delete/{id}', 'App\Http\Controllers\InformationController@destroy')->name('information.delete');
+
+Route::get('/new/search', 'App\Http\Controllers\SearchController@search')->name('search');

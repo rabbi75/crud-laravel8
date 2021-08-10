@@ -14,6 +14,10 @@
                         <a class="nav-link" href="{{ route('information.create')  }}">Add Student</a>
                     </li>
                 </ul>
+                <form class="d-flex" action=" {{ route('search') }} " method="get">
+                    <input class="form-control me-2" required name="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" name="submit">Search</button>
+                </form>
             </div>
         </div>
     </nav>
